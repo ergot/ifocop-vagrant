@@ -7,16 +7,13 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install ubuntu-gnome-desktop -y
 
 #chrome
- sudo sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
-
- sudo apt-get update
-
- sudo apt-get install google-chrome-stable -y --allow-unauthenticated
+sudo sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
+sudo apt-get update
+sudo apt-get install google-chrome-stable -y --allow-unauthenticated
 
 #yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-
 sudo apt-get update && sudo apt-get install yarn -y
 
 ## node js
@@ -34,32 +31,19 @@ gem install sass
 ##webstorm 
 sudo wget https://download.jetbrains.com/webstorm/WebStorm-2016.3.1.tar.gz
 sudo tar -zxvf WebStorm-2016.3.1.tar.gz
+rm WebStorm-2016.3.1.tar.gz
 #lancer en mode graphique
 bash WebStorm-163.7743.51/bin/webstorm.sh
 
 ##package fr
 sudo apt-get install language-pack-fr -y
 
-
 ## expect 
 sudo apt install expect -y
 
-exit 
+##plug in vm
+sudo apt-get install virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
 
-#hget ???
-#git
-#already installed
+##zsh
+sudo apt-get install zsh -y
 
-#zsh
-#sudo apt-get install zsh -y
-
-
-#add new user
-#sudo useradd jojo -m -G sudo
-#sudo passwd jojo
-
-sudo apt-get autoremove -y
-sudo apt-get autoclean -y
-
-#reboot pour gnome minimal
-#sudo reboot

@@ -44,15 +44,13 @@ Vagrant.configure("2") do |config|
   # Example for VirtualBox:
   #
    config.vm.provider "virtualbox" do |vb|
-  #  Display the VirtualBox GUI when booting the machine
+    # Display the VirtualBox GUI when booting the machine
      vb.gui = true
-  
-  #  Customize the amount of memory on the VM:
+    #Customize the amount of memory on the VM:
      vb.memory = "2048"
-	#vram		#vboxmanage
-	vb.customize ["modifyvm", :id, "--vram", "128"]
-	vb.name = "ifcop_vm"	
-
+	  #vboxmanage
+	  vb.customize ["modifyvm", :id, "--vram", "128"]
+	  vb.name = "ifcop_vm"
    end
   #
   # View the documentation for the provider you are using for more
@@ -72,7 +70,8 @@ Vagrant.configure("2") do |config|
   #   apt-get update
   #   apt-get install -y apache2
   # SHELL
-	config.vm.provision "shell", path: "sys.sh"
+	#config.vm.provision "shell", path: "sys.sh"
 	config.vm.provision "shell", path: "expect.sh"
+  #config.vm.provision "shell", path: "clean.sh"
 	
 end

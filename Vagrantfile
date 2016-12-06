@@ -74,5 +74,6 @@ Vagrant.configure("2") do |config|
 	config.vm.provision "shell", path: "expect.sh"
   config.vm.provision "shell", path: "clean.sh"
   config.vm.provision "shell", path: "x11.sh"
+  config.vm.provision "shell", path: "ide.sh"
 	
 end

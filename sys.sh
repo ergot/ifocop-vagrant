@@ -1,9 +1,6 @@
 #!/bin/bash
-
 #sys
 sudo apt-get update && sudo apt-get upgrade -y
-
-
 
 #chrome
 sudo sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
@@ -27,12 +24,7 @@ source /home/ubuntu/.rvm/scripts/rvm
 ##sass
 gem install sass
 
-##webstorm 
-sudo wget https://download.jetbrains.com/webstorm/WebStorm-2016.3.1.tar.gz
-sudo tar -zxvf WebStorm-2016.3.1.tar.gz
-rm WebStorm-2016.3.1.tar.gz
-#lancer en mode graphique
-bash WebStorm-163.7743.51/bin/webstorm.sh
+
 
 ##package fr
 sudo apt-get install language-pack-fr -y

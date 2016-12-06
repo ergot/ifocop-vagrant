@@ -20,8 +20,5 @@ gem install sass
 #package fr
 sudo apt-get install language-pack-fr -y
 
-# expect
-sudo apt install expect -y
-
 #plug in vm
 sudo apt-get install virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11

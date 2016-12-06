@@ -70,17 +70,18 @@ Vagrant.configure("2") do |config|
   #start
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get update && sudo apt-get upgrade -y
+    sudo apt install expect -y
   SHELL
-	config.vm.provision "shell", path: "sys.sh"
-	config.vm.provision "shell", path: "expect.sh"
-  config.vm.provision "shell", path: "clean.sh"
-  config.vm.provision "shell", path: "x11.sh"
-  config.vm.provision "shell", path: "ide.sh"
-  config.vm.provision "shell", path: "shell.sh"
-  config.vm.provision "shell", path: "browser.sh"
+  # config.vm.provision "shell", path: "sys.sh"
+  # config.vm.provision "shell", path: "expect.sh"
+  # config.vm.provision "shell", path: "clean.sh"
+  # config.vm.provision "shell", path: "x11.sh"
+  # config.vm.provision "shell", path: "ide.sh"
+   config.vm.provision "shell", path: "shell.sh"
+  # config.vm.provision "shell", path: "browser.sh"
   #end
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get autoclean && sudo apt-get autoremove
   SHELL
-	
+
 end

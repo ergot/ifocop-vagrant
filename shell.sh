@@ -1,10 +1,7 @@
-#!/usr/bin/expect
+#!/bin/bash
 
-set password "ubuntu"
-#zsh
-spawn sudo apt-get install zsh -y
-
-#oh my zsh
-spawn sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-expect "Password:"
-send "$password\r"
+# Added zsh shell.
+sudo apt-get install zsh -y
+wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+sudo chsh -s /bin/zsh ubuntu
+zsh

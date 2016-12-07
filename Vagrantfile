@@ -50,7 +50,7 @@ Vagrant.configure("2") do |config|
      vb.memory = "2048"
 	  #vboxmanage
 	  vb.customize ["modifyvm", :id, "--vram", "128"]
-	  vb.name = "ifcop_vm"
+	  #vb.name = "ifcop_box"
    end
   #
   # View the documentation for the provider you are using for more
@@ -72,16 +72,18 @@ Vagrant.configure("2") do |config|
     sudo apt-get update && sudo apt-get upgrade -y
     sudo apt install expect -y
   SHELL
-  # config.vm.provision "shell", path: "sys.sh"
-  # config.vm.provision "shell", path: "expect.sh"
-  # config.vm.provision "shell", path: "clean.sh"
-  # config.vm.provision "shell", path: "x11.sh"
-  # config.vm.provision "shell", path: "ide.sh"
-   config.vm.provision "shell", path: "shell.sh"
-  # config.vm.provision "shell", path: "browser.sh"
-  #end
-  config.vm.provision "shell", inline: <<-SHELL
-    sudo apt-get autoclean && sudo apt-get autoremove
-  SHELL
+  config.vm.provision "shell", path: "shell.sh"
+  config.vm.provision "shell", path: "sys.sh"
+  config.vm.provision "shell", path: "browser.sh"
+  config.vm.provision "shell", path: "ide.sh"
+  config.vm.provision "shell", path: "x11.sh"
+  config.vm.provision "shell", path: "password.sh"
 
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo apt-get autoclean && sudo apt-get autoremove -y
+  SHELL
+  #to export:
+  #vagrant package --output [name]
+  #to import
+  #vagrant box add [name]
 end

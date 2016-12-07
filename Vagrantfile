@@ -50,7 +50,7 @@ Vagrant.configure("2") do |config|
      vb.memory = "2048"
 	  #vboxmanage
 	  vb.customize ["modifyvm", :id, "--vram", "128"]
-	  #vb.name = "ifcop_box"
+	  vb.name = "ifcop_box"
    end
   #
   # View the documentation for the provider you are using for more

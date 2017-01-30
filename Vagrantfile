@@ -47,7 +47,9 @@ Vagrant.configure("2") do |config|
     # Display the VirtualBox GUI when booting the machine
      vb.gui = true
     #Customize the amount of memory on the VM:
-     vb.memory = "2048"
+     vb.memory = "10000"
+     #number of cpu
+     vb.customize ["modifyvm", :id, "--cpus", "3"]
 	  #vboxmanage
 	  vb.customize ["modifyvm", :id, "--vram", "128"]
 	  vb.name = "ifcop_box"
